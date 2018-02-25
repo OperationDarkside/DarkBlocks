@@ -15,6 +15,10 @@ public:
 	World();
 	~World();
 
+	void render();
+
+	SuperBlock& getSuperblock();
+
 	std::vector<SuperBlock> superblocks;
 	std::vector<BlockType> types;
 };

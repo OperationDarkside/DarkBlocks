@@ -1,8 +1,11 @@
 #include "World.h"
-
+#include <chrono>
+#include <iostream>
 
 
 World::World() {
+	
+
 	BlockType airBlock;
 	airBlock.setId(0);
 	airBlock.setName("Air");
@@ -25,11 +28,28 @@ World::World() {
 			}
 		}
 	}
-	sb.updateMesh();
+	auto ts1 = std::chrono::system_clock::now();
+
+	sb.createMesh();
 	superblocks.push_back(std::move(sb));
+
+	auto ts2 = std::chrono::system_clock::now();
+
+	std::chrono::microseconds exec_time = std::chrono::duration_cast<std::chrono::microseconds>(ts2 - ts1);
+	std::cout << exec_time.count() << '\n';
 }
 
 
 World::~World()
 {
+}
+
+void World::render() {
+	SuperBlock& sb = superblocks[0];
+
+
+}
+
+SuperBlock & World::getSuperblock() {
+	return superblocks[0];
 }

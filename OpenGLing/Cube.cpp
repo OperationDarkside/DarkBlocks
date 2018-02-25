@@ -33,7 +33,10 @@ void Cube::init() {
 	// VBO
 	glGenBuffers(1, &vertexBufferObj); // Generate 1 buffer
 	glBindBuffer(GL_ARRAY_BUFFER, vertexBufferObj);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+	// glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+	std::vector<float>& meshdata = world.getSuperblock().getMesh().getMeshData();
+	vertices_num = meshdata.size();
+	glBufferData(GL_ARRAY_BUFFER, meshdata.size() * sizeof(float), &meshdata.front(), GL_STATIC_DRAW);
 
 	// Shader
 	//createShader(vertexShader, vertexSource, GL_VERTEX_SHADER);
@@ -62,15 +65,15 @@ void Cube::init() {
 	glVertexAttribPointer(posAttrib, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), 0);
 	*/
 	attrPosition.init(program);
-	attrPosition.bind(3, 8, 0);
+	attrPosition.bind(3, 5, 0);
 
 	// Bind color
 	/*colAttrib = glGetAttribLocation(shaderProgram, "color");
 	glEnableVertexAttribArray(colAttrib);
 	glVertexAttribPointer(colAttrib, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (void*)(3 * sizeof(GLfloat)));
 	*/
-	attrColor.init(program);
-	attrColor.bind(3, 8, 3);
+	//attrColor.init(program);
+	//attrColor.bind(3, 8, 3);
 
 	// Bind texcoord
 	/*texAttrib = glGetAttribLocation(shaderProgram, "texcoord");
@@ -78,7 +81,7 @@ void Cube::init() {
 	glVertexAttribPointer(texAttrib, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (void*)(6 * sizeof(GLfloat)));
 	*/
 	attrTexCoord.init(program);
-	attrTexCoord.bind(3, 8, 6);
+	attrTexCoord.bind(2, 5, 3);
 
 	// Load Mine
 	glGenTextures(2, tx);
@@ -145,7 +148,7 @@ void Cube::draw(std::chrono::microseconds ms_elapsed) {
 	glUniformMatrix4fv(mvp_handle, 1, GL_FALSE, glm::value_ptr(mvp));
 
 	// Draw a rectangle from the 2 triangles using 6 indices
-	glDrawArrays(GL_TRIANGLES, 0, 36);
+	glDrawArrays(GL_TRIANGLES, 0, vertices_num * sizeof(GLfloat));
 }
 
 void Cube::createShader(GLuint & shader, const char * shaderSource, GLenum type) {

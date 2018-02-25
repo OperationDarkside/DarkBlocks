@@ -5,6 +5,7 @@
 #include "Shader.h"
 #include "ShaderProgram.h"
 #include "VertexAttribute.h"
+#include "World.h";
 
 
 class Cube
@@ -18,6 +19,8 @@ public:
 	void draw(std::chrono::microseconds ms_elapsed);
 
 private:
+	unsigned short vertices_num = 0;
+	World world;
 
 	Shader vShader;
 	Shader fShader;

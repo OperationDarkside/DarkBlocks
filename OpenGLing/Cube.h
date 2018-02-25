@@ -19,7 +19,7 @@ public:
 	void draw(std::chrono::microseconds ms_elapsed);
 
 private:
-	unsigned short vertices_num = 0;
+	unsigned long vertices_num = 0;
 	World world;
 
 	Shader vShader;

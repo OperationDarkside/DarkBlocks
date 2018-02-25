@@ -148,7 +148,7 @@ void Cube::draw(std::chrono::microseconds ms_elapsed) {
 	glUniformMatrix4fv(mvp_handle, 1, GL_FALSE, glm::value_ptr(mvp));
 
 	// Draw a rectangle from the 2 triangles using 6 indices
-	glDrawArrays(GL_TRIANGLES, 0, vertices_num * sizeof(GLfloat));
+	glDrawArrays(GL_TRIANGLES, 0, vertices_num / 5);
 }
 
 void Cube::createShader(GLuint & shader, const char * shaderSource, GLenum type) {

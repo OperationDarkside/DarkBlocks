@@ -3,7 +3,7 @@
 
 
 SuperBlockMesh::SuperBlockMesh(std::vector<BlockType>& _types) : types(_types) {
-	data.reserve(400000);
+	//data.reserve(400000);
 }
 
 

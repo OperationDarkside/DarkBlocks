@@ -322,7 +322,7 @@ void SuperBlockMesh::createBlockElements(BlockFaces & checkedFaces, unsigned sho
 			0
 			});
 	}
-	//if (!checkedFaces.top) {
+	if (!checkedFaces.top) {
 		//for (size_t i = 0; i < 6; i++) {
 			/*data.insert(data.end(), {
 				topFace[i].vert.x + xf,
@@ -340,7 +340,7 @@ void SuperBlockMesh::createBlockElements(BlockFaces & checkedFaces, unsigned sho
 				topFace[tmp + 4]
 				});*/
 		//}
-		/*data.insert(data.end(), {
+		data.insert(data.end(), {
 			back_top_right[0],
 			back_top_right[1],
 			back_top_right[2],
@@ -372,7 +372,7 @@ void SuperBlockMesh::createBlockElements(BlockFaces & checkedFaces, unsigned sho
 			0,
 			0
 			});
-	}*/
+	}
 	if (!checkedFaces.bottom) {
 		//for (size_t i = 0; i < 6; i++) {
 			/*data.insert(data.end(), {

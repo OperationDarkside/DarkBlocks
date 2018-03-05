@@ -2,7 +2,7 @@
 
 
 
-Graphics::Graphics(Input& input) : input (input), cube(input) {
+Graphics::Graphics(Input& input) : input(input), cube(input) {
 	initGlew();
 
 	glEnable(GL_DEPTH_TEST);

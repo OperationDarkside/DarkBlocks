@@ -25,6 +25,12 @@
     <Filter Include="Header Files\Shader">
       <UniqueIdentifier>{20e6961e-461c-42ff-8bc7-cbdce3788904}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Networking">
+      <UniqueIdentifier>{d2ba11a7-2f5d-4723-a318-68daffb75ba2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Networking">
+      <UniqueIdentifier>{63ae2392-7caa-4929-af97-18b302a39d0e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -75,6 +81,9 @@
     <ClCompile Include="SuperBlockMesh.cpp">
       <Filter>Source Files\World</Filter>
     </ClCompile>
+    <ClCompile Include="PlayPositionTest.cpp">
+      <Filter>Source Files\Networking</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graphics.h">
@@ -122,5 +131,40 @@
     <ClInclude Include="SuperBlockMesh.h">
       <Filter>Header Files\World</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayPositionTest.h">
+      <Filter>Header Files\Networking</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DarkBlocks.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cube.frag">
+      <Filter>Header Files\Shader</Filter>
+    </None>
+    <None Include="cube.vert">
+      <Filter>Header Files\Shader</Filter>
+    </None>
+    <None Include="nice_music.ogg">
+      <Filter>Header Files\Shader</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="sample.png">
+      <Filter>Header Files\Shader</Filter>
+    </Image>
+    <Image Include="minepun.jpg">
+      <Filter>Header Files\Shader</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="OpenSans-Light.ttf">
+      <Filter>Header Files\Shader</Filter>
+    </Font>
   </ItemGroup>
 </Project>

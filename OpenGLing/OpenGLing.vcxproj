@@ -138,6 +138,7 @@
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="PlayPositionTest.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="ShaderProgram.cpp" />
     <ClCompile Include="SuperBlock.cpp" />
@@ -155,7 +156,9 @@
     <ClInclude Include="Cube.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="PlayPositionTest.h" />
     <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="ShaderProgram.h" />
     <ClInclude Include="SuperBlock.h" />
     <ClInclude Include="SuperBlockMesh.h" />
@@ -164,6 +167,21 @@
     <ClInclude Include="Shader.h" />
     <ClInclude Include="VertexAttribute.h" />
     <ClInclude Include="World.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DarkBlocks.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cube.frag" />
+    <None Include="cube.vert" />
+    <None Include="nice_music.ogg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="minepun.jpg" />
+    <Image Include="sample.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="OpenSans-Light.ttf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
